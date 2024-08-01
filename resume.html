@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="resume.css">
+    <title>Xander Coetzee - Resume</title>
+</head>
+<body>
+    <nav class="top-nav">
+        <div class="nav-container">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="CV-2.pdf" download>Portfolio</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <h1>Resume</h1>
+        <div class="resume-sections">
+            <section id="education">
+                <h2>About me</h2>
+                <p class="wrap-text">
+                    I am a final IT Student at NWU. Computers have always been a great interest of mine, and programming has just added to this passion I have. 
+                    I am a goal-driven individual who takes pride in going the extra mile to achieve my goals. I am passionate about solving problems and find joy in coming up with unique solutions for problems.
+                </p>
+            </section>            
+            <section id="experience">
+                <h2>Experience</h2>
+                <p class="wrap-text">
+                    <strong>Assistant lecturer at NWU 2023 - 2024</strong><br>
+         
+                    In this role, I provided crucial support to the lead Lecturer, operating under 
+                    strict timelines and schedules. My responsibilities included lecturing students 
+                    during class sessions, grading tests and practical assignments, capturing and
+                    processing marks, and offering subject-specific tutoring services outside of 
+                    regular class hours. This position demanded meticulous attention to detail, 
+                    effective time management, and a commitment to enhancing student learning outcomes.
+                </p>
+            </section>
+            <section id="Education">
+                <h2>Education</h2>
+                <p class="wrap-text">
+                    <strong>School: Hoërskool Linden (2017 - 2022)</strong><br>
+                    National Senior Certificate<br>
+                    Afrikaans, English, Mathematics, Information Technology, Physical
+                    Science, Geography.<br><br><br>
+
+                    <strong>University: North-West University (2022 - present)</strong><br>
+                    BSc Information Technology (Incomplete)<br>
+                    - Computer management and programming<br>
+                    - Design, development and delivery of computerised systems<br>
+                    - Contribute to management of information and information sources<br>
+                    - Develop IT-related solutions
+                </p>
+            </section>
+            <section id="skills">
+                <h2>Skills</h2>
+                <p class="wrap-text">
+                    
+                </p>
+            </section>
+            
+        </div>
+        
+    </div>
+    <div class="social-links">
+        <a href="https://www.linkedin.com/in/xander-coetzee-22b09621b/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/Xander-Coetzee" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const links = document.querySelectorAll('a:not([download])');
+            
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    if (this.hostname === window.location.hostname) {
+                        e.preventDefault();
+                        document.body.classList.add('fade-out');
+                        
+                        setTimeout(() => {
+                            window.location = this.href;
+                        }, 500);
+                    }
+                });
+            });
+        });
+        
+        window.addEventListener('pageshow', function(event) {
+            if (event.persisted) {
+                document.body.classList.remove('fade-out');
+            }
+        });
+    </script>
+</body>
+</html>
