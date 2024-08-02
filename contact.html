@@ -14,7 +14,7 @@
         <div class="nav-container">
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="CV-2.pdf" download>Portfolio</a></li>
+                <li><a href="CV-2.pdf" download>Download CV</a></li>
                 <li><a href="resume.html">Resume</a></li>
             </ul>
         </div>
@@ -22,17 +22,37 @@
     <div class="container">
         <h1>Contact Me</h1>
         <div class="contact-info">
-            <p><i class="fas fa-phone"></i> Phone: +27 12 345 6789</p>
-            <p><i class="fas fa-envelope"></i> Email: xander.coetzee@example.com</p>
-            <p><i class="fas fa-map-marker-alt"></i> Address: 123 Main St, Pretoria, South Africa</p>
+            <p><i class="fas fa-envelope"></i> Email: xandercoetzee1503@gmail.com</p>
+            <p><i class="fas fa-map-marker-alt"></i> Address: Potchefstroom, North West</p>
+            <p><i class="fab fa-linkedin"></i>  <a href="https://www.linkedin.com/in/xander-coetzee-22b09621b/" target="_blank">LinkedIn</a></p>
+            <p><i class="fab fa-github"></i>  <a href="https://github.com/Xander-Coetzee" target="_blank">Github</a></p>
         </div>
+        
     </div>
-    <div class="social-links">
-        <a href="https://www.linkedin.com/in/xander-coetzee-22b09621b/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-        <a href="https://github.com/Xander-Coetzee" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-    </div>
+    
     <script>
-        // Your existing script here
+        document.addEventListener("DOMContentLoaded", function() {
+            const links = document.querySelectorAll('a:not([download])');
+            
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    if (this.hostname === window.location.hostname) {
+                        e.preventDefault();
+                        document.body.classList.add('fade-out');
+                        
+                        setTimeout(() => {
+                            window.location = this.href;
+                        }, 500);
+                    }
+                });
+            });
+        });
+        
+        window.addEventListener('pageshow', function(event) {
+            if (event.persisted) {
+                document.body.classList.remove('fade-out');
+            }
+        });
     </script>
 </body>
 </html>

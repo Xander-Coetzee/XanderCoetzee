@@ -14,7 +14,7 @@
         <div class="nav-container">
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="CV-2.pdf" download>Portfolio</a></li>
+                <li><a <li><a href="CV-2.pdf" download>Download CV</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </div>
@@ -60,14 +60,59 @@
             </section>
             <section id="skills">
                 <h2>Skills</h2>
-                <p class="wrap-text">
-                    
-                </p>
+                <div class="skill-container">
+                    <div class="skill-item" data-skill="Python" data-level="85">
+                        <i class="fab fa-python"></i>
+                        <span>Python</span>
+                    </div>
+                    <div class="skill-item" data-skill="HTML" data-level="50">
+                        <i class="fab fa-html5"></i>
+                        <span>HTML</span>
+                    </div>
+                    <div class="skill-item" data-skill="CSS" data-level="50">
+                        <i class="fab fa-css3-alt"></i>
+                        <span>CSS</span>
+                    </div>
+                    <div class="skill-item" data-skill="C#" data-level="95">
+                        <i class="fab fa-microsoft"></i>
+                        <span>C#</span>
+                    </div>
+                    <div class="skill-item" data-skill="Java" data-level="80">
+                        <i class="fab fa-java"></i>
+                        <span>Java</span>
+                    </div>
+                    <div class="skill-item" data-skill="SQL" data-level="85">
+                        <i class="fas fa-database"></i>
+                        <span>SQL</span>
+                    </div>
+                </div>
+                <br><br>
             </section>
+            
+            
             
         </div>
         
     </div>
+    <div class="skill-level"></div>
+<script>
+    const skillItems = document.querySelectorAll('.skill-item');
+    const skillLevel = document.querySelector('.skill-level');
+
+    skillItems.forEach(item => {
+        item.addEventListener('mouseenter', () => {
+            const skill = item.getAttribute('data-skill');
+            const level = item.getAttribute('data-level');
+            skillLevel.textContent = `${skill} proficiency: ${level}%`;
+            skillLevel.style.display = 'block';
+        });
+
+        item.addEventListener('mouseleave', () => {
+            skillLevel.style.display = 'none';
+        });
+    });
+</script>
+
     <div class="social-links">
         <a href="https://www.linkedin.com/in/xander-coetzee-22b09621b/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
         <a href="https://github.com/Xander-Coetzee" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
