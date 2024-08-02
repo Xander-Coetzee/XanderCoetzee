@@ -27,7 +27,7 @@ body, html {
     width: 100%;
 }
 
- #experience p, #Education p, #skills p {
+#education p, #experience p, #Education p, #skills p {
     margin-left: 15px;
     font-size: 0.9em;
 }
@@ -87,13 +87,28 @@ body, html {
 
 .skill-level {
     position: fixed;
-    bottom: 55px;
-    left: 65%;
+    bottom: 15%;
+    left: 60%;
     transform: translateX(-50%);
     background-color: #333;
     color: white;
     padding: 10px 20px;
     border-radius: 5px;
     display: none;
+}
+.animated-title {
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.animated-title:hover {
+    transform: scale(1.01);
+    color: #B0E0E6;
+}
+.highlight-text {
+    color: #4682B4; /* This is a steel blue color, you can change it to any color you prefer */
+}
+.subtext {
+ 
+    color: #4682B4;
 }
 

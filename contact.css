@@ -25,3 +25,11 @@
 }
 
 
+.animated-title {
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.animated-title:hover {
+    transform: scale(1.05);
+    color: #B0E0E6;
+}

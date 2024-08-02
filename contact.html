@@ -14,25 +14,40 @@
         <div class="nav-container">
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="CV-2.pdf" download>Download CV</a></li>
+                <li><a href="CV-Xander Coetzee.pdf" download>Download CV</a></li>
                 <li><a href="resume.html">Resume</a></li>
             </ul>
         </div>
     </nav>
     <div class="container">
-        <h1>Contact Me</h1>
+        <h1 class="animated-title">Contact Me</h1>
+
         <div class="contact-info">
-            <p><i class="fas fa-envelope"></i> Email: xandercoetzee1503@gmail.com</p>
+            <p><i class="fas fa-envelope"></i> Email: <a href="#" id="email-link" data-email="xandercoetzee1503@gmail.com">xandercoetzee1503@gmail.com</a></p>
+
             <p><i class="fas fa-map-marker-alt"></i> Address: Potchefstroom, North West</p>
             <p><i class="fab fa-linkedin"></i>  <a href="https://www.linkedin.com/in/xander-coetzee-22b09621b/" target="_blank">LinkedIn</a></p>
             <p><i class="fab fa-github"></i>  <a href="https://github.com/Xander-Coetzee" target="_blank">Github</a></p>
         </div>
         
     </div>
+    <script>
+        document.getElementById('email-link').addEventListener('click', function(e) {
+            e.preventDefault();
+            var email = this.getAttribute('data-email');
+            navigator.clipboard.writeText(email).then(function() {
+                alert('Email address copied to clipboard!');
+            }, function(err) {
+                console.error('Could not copy text: ', err);
+            });
+            return false;
+        });
+    </script>
+    
     
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            const links = document.querySelectorAll('a:not([download])');
+            const links = document.querySelectorAll('a:not([download]):not(#email-link)');
             
             links.forEach(link => {
                 link.addEventListener('click', function(e) {
@@ -46,6 +61,16 @@
                     }
                 });
             });
+    
+            document.getElementById('email-link').addEventListener('click', function(e) {
+                e.preventDefault();
+                var email = this.getAttribute('data-email');
+                navigator.clipboard.writeText(email).then(function() {
+                    alert('Email address copied to clipboard!');
+                }, function(err) {
+                    console.error('Could not copy text: ', err);
+                });
+            });
         });
         
         window.addEventListener('pageshow', function(event) {
@@ -54,5 +79,6 @@
             }
         });
     </script>
+    
 </body>
 </html>
